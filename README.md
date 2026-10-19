@@ -121,7 +121,7 @@ yf-framework/
 │   ├── yf.js           # Core JavaScript engine & classes
 │   └── yf.min.js       # Minified JavaScript bundle
 │
-├── docs.html           # Documentation page
+├── index.html           # Documentation page
 └── README.md           # Framework guide
 ```
 
