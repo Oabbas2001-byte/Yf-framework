@@ -1,0 +1,2214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>YF CSS Framework Documentation</title>
+
+    <link rel="stylesheet" href="css/yf.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body class="yf-bg-surface">
+    <div class="docs-layout">
+      <!-- =====================================================
+         DOCUMENTATION NAVIGATION
+         ===================================================== -->
+
+      <!-- Mobile Toggle Button (Visible <= 800px) -->
+<div class="burgerbg">
+  <button type="button" class="yf-burger-btn" id="docs-sidebar-toggle" aria-label="Toggle navigation menu"aria-expanded="false">
+    <span class="yf-burger-dash"></span>
+    <span class="yf-burger-dash"></span>
+    <span class="yf-burger-dash"></span>
+  </button>
+</div>
+
+
+<!-- Mobile Dimmer Backdrop -->
+<div class="docs-sidebar-backdrop" id="docs-sidebar-backdrop"></div>
+
+<!-- Your Sidebar -->
+<aside class="docs-sidebar" id="docs-sidebar">
+  <h2>YF CSS</h2>
+
+  <h3>Introduction</h3>
+  <a href="#getting-started">Getting Started</a>
+  <a href="#theming">Theming</a>
+
+  <h3>Layout</h3>
+  <a href="#containers">Containers</a>
+  <a href="#grid">Grid</a>
+
+  <h3>Components</h3>
+  <a href="#buttons">Buttons</a>
+  <a href="#badges">Badges</a>
+  <a href="#alerts">Alerts</a>
+  <a href="#cards">Cards</a>
+  <a href="#modal">Modal</a>
+  <a href="#accordion">Accordion</a>
+  <a href="#sidebar">Sidebar</a>
+  <a href="#tabs">Tabs</a>
+  <a href="#tooltips">Tooltips</a>
+  <a href="#toasts">Toasts</a>
+
+  <h3>Forms</h3>
+  <a href="#forms">Forms</a>
+  <a href="#checkboxes">Checkboxes</a>
+  <a href="#switches">Switches</a>
+  <a href="#input-groups">Input Groups</a>
+
+  <h3>Data & Media</h3>
+  <a href="#tables">Tables</a>
+  <a href="#lists">Lists</a>
+  <a href="#images">Images</a>
+
+  <h3>Utilities</h3>
+  <a href="#spacing">Spacing</a>
+  <a href="#display">Display</a>
+  <a href="#flex">Flex</a>
+  <a href="#grid-utilities">Grid Utilities</a>
+  <a href="#typography">Typography</a>
+  <a href="#sizing">Sizing</a>
+  <a href="#positioning">Positioning</a>
+  <a href="#overflow">Overflow</a>
+  <a href="#borders">Borders</a>
+  <a href="#radius">Border Radius</a>
+  <a href="#shadows">Shadows</a>
+  <a href="#backgrounds">Backgrounds</a>
+  <a href="#visibility">Visibility</a>
+  <a href="#opacity">Opacity</a>
+  <a href="#z-index">Z-Index</a>
+
+  <h3>Responsive</h3>
+  <a href="#responsive">Responsive Utilities</a>
+
+  <h3>JavaScript</h3>
+  <a href="#yf-core">Core Engine (yf)</a>
+  <a href="#yf-toast-js">Toast Class</a>
+  <a href="#yf-sidebar-js">Sidebar Class</a>
+  <a href="#yf-modal-js">Modal Class</a>
+  <a href="#yf-accordion-js">Accordion Class</a>
+</aside>
+
+      <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+      <main class="docs-main">
+        <!-- ===================================================
+           GETTING STARTED
+           =================================================== -->
+
+        <!-- ===================================================
+           GETTING STARTED
+           =================================================== -->
+
+        <section id="getting-started" class="docs-section">
+          <h1 class="yf-text-3xl yf-font-bold yf-mb-3">
+            YF Framework Documentation
+          </h1>
+
+          <p class="yf-mb-3">
+            A lightweight, high-performance, modular UI framework built from
+            scratch with modern CSS and object-oriented JavaScript.
+          </p>
+
+          <!-- Production Files Card -->
+          <div class="yf-card yf-p-4 yf-mb-4 yf-bg-white">
+            <h3 class="yf-text-lg yf-font-bold yf-mb-2">Production Files</h3>
+            <p class="yf-mb-2">
+              For production use, include the compiled and minified bundle files
+              in your project:
+            </p>
+            <ul class="yf-list-disc yf-ms-4">
+              <li class="yf-list-item">
+                <strong><code>yf.min.css</code></strong> — Contains all core
+                layout styles, utility classes, and component designs.
+              </li>
+              <li class="yf-list-item">
+                <strong><code>yf.min.js</code></strong> — Contains the core
+                selector engine (<span class="inline-code">yf</span>) and all
+                object-oriented component classes.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Essential Component Hook Classes -->
+          <div class="yf-card yf-p-4 yf-mb-4 yf-bg-white">
+            <h3 class="yf-text-lg yf-font-bold yf-mb-2">
+              Essential JavaScript Hooks
+            </h3>
+            <p class="yf-mb-2">
+              Make sure to use these essential container and hook classes in
+              your HTML so the object-oriented JavaScript components can
+              automatically detect and initialize correctly:
+            </p>
+            <div class="yf-table-responsive">
+              <table class="yf-table yf-table-bordered yf-table-sm">
+                <thead>
+                  <tr>
+                    <th>Class / Hook</th>
+                    <th>Component Purpose</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>yf-accordion-group</code></td>
+                    <td>
+                      Parent wrapper container required for accordion JavaScript
+                      binding.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>yf-sidebar</code></td>
+                    <td>Off-canvas sidebar element container.</td>
+                  </tr>
+                  <tr>
+                    <td><code>yf-sidebar-close</code></td>
+                    <td>Triggers sidebar closure when clicked.</td>
+                  </tr>
+                  <tr>
+                    <td><code>yf-sidebar-overlay</code></td>
+                    <td>Background backdrop overlay for sidebars.</td>
+                  </tr>
+                  <tr>
+                    <td><code>yf-modal</code></td>
+                    <td>Popup dialog container component.</td>
+                  </tr>
+                  <tr>
+                    <td><code>yf-modal-close</code></td>
+                    <td>Hook for elements/buttons that close active modals.</td>
+                  </tr>
+                  <tr>
+                    <td><code>yf-modal-backdrop</code></td>
+                    <td>
+                      Backdrop area for clicking outside to dismiss modals.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>yf-toast-container</code></td>
+                    <td>
+                      Dynamic container wrapper where toast notifications
+                      render.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>yf-toast-close</code></td>
+                    <td>
+                      Close button trigger inside individual toast alerts.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Theming Guide -->
+          <div class="yf-card yf-p-4 yf-mb-4 yf-bg-white">
+            <h3 class="yf-text-lg yf-font-bold yf-mb-2">Theme Customization</h3>
+            <p class="yf-mb-2">
+              Do not edit <code>yf.min.css</code> directly. To gain full control
+              over brand colors, typography, spacing, shadows, and border radii,
+              create or edit your custom
+              <strong><code>css/theme.css</code></strong> file:
+            </p>
+            <pre><code>:root {
+  --yf-primary: #2563eb;
+  --yf-primary-hover: #1d4ed8;
+  --yf-secondary: #f69713;
+  --yf-secondary-hover: #fb6039;
+  --yf-success: #16a34a;
+  --yf-warning: #bc9220;
+  --yf-warning-hover: #f84242;
+  --yf-danger: #dc2626;
+  --yf-danger-hover: #960c0c;
+  --yf-info: #0891b2;
+  --yf-surface: #fcf8f8;
+  --yf-text: #0f172a;
+  --yf-muted: #64748b;
+  --yf-border: #e2e8f0;
+  --yf-white: #ffffff;
+  --yf-black: #000000;
+  --yf-radius-sm: 0.375rem;
+  --yf-radius: 0.625rem;
+  --yf-radius-lg: 1rem;
+  --yf-bg: #ffffff;
+  --yf-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.08);
+  --yf-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+  --yf-shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.16);
+  --yf-container: 1200px;
+  --yf-gutter: 1.5rem;
+  --yf-font:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}</code></pre>
+          </div>
+
+          <!-- Quick Start Snippet -->
+          <h2 class="yf-text-xl yf-font-bold yf-my-3">Quick Start Code</h2>
+          <p class="yf-mb-2">
+            Include your compiled CSS files in your
+            <code>&lt;head&gt;</code> and your framework script bundle at the
+            bottom of your <code>&lt;body&gt;</code>:
+          </p>
+          <pre><code>&lt;head&gt;
+  &lt;link rel="stylesheet" href="css/yf.min.css"&gt;
+  &lt;link rel="stylesheet" href="css/theme.css"&gt; &lt;!-- Optional custom overrides --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Your HTML components here --&gt;
+  &lt;script src="js/yf.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+        </section>
+
+        <!-- ===================================================
+           THEMING
+           =================================================== -->
+
+        <section id="theming" class="docs-section">
+          <h2>Theming</h2>
+
+          <p>
+            YF CSS uses CSS custom properties for its design system. You can
+            override the variables from your theme stylesheet.
+          </p>
+
+          <pre><code>:root {
+  --yf-primary: #2563eb;
+  --yf-primary-hover: #1d4ed8;
+  --yf-secondary: #f69713;
+  --yf-secondary-hover: #fb6039;
+  --yf-success: #16a34a;
+  --yf-warning: #bc9220;
+  --yf-warning-hover: #f84242;
+  --yf-danger: #dc2626;
+  --yf-danger-hover: #960c0c;
+  --yf-info: #0891b2;
+
+  --yf-surface: #fcf8f8;
+  --yf-text: #0f172a;
+  --yf-muted: #64748b;
+  --yf-border: #e2e8f0;
+
+  --yf-white: #ffffff;
+  --yf-black: #000000;
+
+  --yf-radius-sm: 0.375rem;
+  --yf-radius: 0.625rem;
+  --yf-radius-lg: 1rem;
+
+  --yf-bg: #ffffff;
+
+  --yf-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.08);
+  --yf-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+  --yf-shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.16);
+
+  --yf-container: 1200px;
+  --yf-gutter: 1.5rem;
+
+  --yf-font:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+</code></pre>
+
+          <h3>Design Tokens</h3>
+
+          <div class="example-box">
+            <div class="yf-row yf-d-flex">
+              <div class="yf-col-12 yf-col-md-4">
+                <div class="color-preview yf-bg-primary">Primary</div>
+              </div>
+
+              <div class="yf-col-12 yf-col-md-4">
+                <div class="color-preview yf-bg-success">Success</div>
+              </div>
+
+              <div class="yf-col-12 yf-col-md-4">
+                <div class="color-preview yf-bg-danger">Danger</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================
+           CONTAINERS
+           =================================================== -->
+
+        <section id="containers" class="docs-section">
+          <h2>Containers</h2>
+
+          <p>
+            Containers control the maximum width and horizontal spacing of page
+            content.
+          </p>
+
+          <h3>Fixed Container</h3>
+
+          <pre><code>&lt;div class="yf-container"&gt;
+  Content
+&lt;/div&gt;</code></pre>
+
+          <p>
+            The default maximum width is controlled by
+            <span class="inline-code">--yf-container</span>.
+          </p>
+
+          <pre><code>--yf-container: 1200px;</code></pre>
+
+          <h3>Fluid Container</h3>
+
+          <pre><code>&lt;div class="yf-container-fluid"&gt;
+  Content
+&lt;/div&gt;</code></pre>
+        </section>
+
+        <!-- ===================================================
+           GRID
+           =================================================== -->
+
+        <section id="grid" class="docs-section">
+          <h2>Responsive Grid</h2>
+
+          <p>YF CSS provides a 12-column responsive grid.</p>
+
+          <div class="example-box">
+            <div class="yf-row yf-d-flex">
+              <div class="yf-col-12 yf-col-md-4">
+                <div class="grid-preview">1</div>
+              </div>
+
+              <div class="yf-col-12 yf-col-md-4">
+                <div class="grid-preview">2</div>
+              </div>
+
+              <div class="yf-col-12 yf-col-md-4">
+                <div class="grid-preview">3</div>
+              </div>
+            </div>
+          </div>
+
+          <pre><code>&lt;div class="yf-row yf-d-flex"&gt;
+
+  &lt;div class="yf-col-12 yf-col-md-4"&gt;
+    Column 1
+  &lt;/div&gt;
+
+  &lt;div class="yf-col-12 yf-col-md-4"&gt;
+    Column 2
+  &lt;/div&gt;
+
+  &lt;div class="yf-col-12 yf-col-md-4"&gt;
+    Column 3
+  &lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+
+          <h3>Column Sizes</h3>
+
+          <pre><code>.yf-col-1
+.yf-col-2
+.yf-col-3
+.yf-col-4
+.yf-col-5
+.yf-col-6
+.yf-col-7
+.yf-col-8
+.yf-col-9
+.yf-col-10
+.yf-col-11
+.yf-col-12</code></pre>
+
+          <h3>Responsive Columns</h3>
+
+          <pre><code>.yf-col-sm-*
+.yf-col-md-*
+.yf-col-lg-*
+.yf-col-xl-*</code></pre>
+
+          <h3>Breakpoints</h3>
+
+          <p>
+            <strong>sm</strong>: 576px · <strong>md</strong>: 768px ·
+            <strong>lg</strong>: 992px · <strong>xl</strong>: 1200px
+          </p>
+        </section>
+
+        <!-- ===================================================
+           BUTTONS
+           =================================================== -->
+
+        <section id="buttons" class="docs-section">
+          <h2>Buttons</h2>
+
+          <div class="example-box button-row">
+            <button class="yf-btn yf-d-inline-flex yf-align-center">
+              Primary
+            </button>
+
+            <button
+              class="yf-btn yf-btn-secondary yf-d-inline-flex yf-align-center"
+            >
+              Secondary
+            </button>
+
+            <button
+              class="yf-btn yf-btn-success yf-d-inline-flex yf-align-center"
+            >
+              Success
+            </button>
+
+            <button
+              class="yf-btn yf-btn-warning yf-d-inline-flex yf-align-center"
+            >
+              Warning
+            </button>
+
+            <button
+              class="yf-btn yf-btn-danger yf-d-inline-flex yf-align-center"
+            >
+              Danger
+            </button>
+
+            <button class="yf-btn yf-btn-info yf-d-inline-flex yf-align-center">
+              Info
+            </button>
+
+            <button
+              class="yf-btn yf-btn-outline yf-d-inline-flex yf-align-center"
+            >
+              Outline
+            </button>
+          </div>
+
+          <pre><code>&lt;button class="yf-btn yf-d-inline-flex yf-align-center"&gt;
+  Primary
+&lt;/button&gt;
+
+&lt;button class="yf-btn yf-btn-secondary yf-d-inline-flex yf-align-center"&gt;
+  Secondary
+&lt;/button&gt;
+
+&lt;button class="yf-btn yf-btn-success yf-d-inline-flex yf-align-center"&gt;
+  Success
+&lt;/button&gt;
+
+&lt;button class="yf-btn yf-btn-warning yf-d-inline-flex yf-align-center"&gt;
+  Warning
+&lt;/button&gt;
+
+&lt;button class="yf-btn yf-btn-danger yf-d-inline-flex yf-align-center"&gt;
+  Danger
+&lt;/button&gt;
+
+&lt;button class="yf-btn yf-btn-info yf-d-inline-flex yf-align-center"&gt;
+  Info
+&lt;/button&gt;
+
+&lt;button class="yf-btn yf-btn-outline yf-d-inline-flex yf-align-center"&gt;
+  Outline
+&lt;/button&gt;</code></pre>
+
+          <h3>Sizes</h3>
+
+          <pre><code>.yf-btn-sm
+.yf-btn
+.yf-btn-lg
+.yf-btn-block</code></pre>
+
+          <div class="example-box button-row">
+            <button class="yf-btn yf-btn-sm yf-d-inline-flex yf-align-center">
+              Small
+            </button>
+
+            <button class="yf-btn yf-d-inline-flex yf-align-center">
+              Normal
+            </button>
+
+            <button class="yf-btn yf-btn-lg yf-d-inline-flex yf-align-center">
+              Large
+            </button>
+          </div>
+        </section>
+
+        <!-- ===================================================
+           BADGES
+           =================================================== -->
+
+        <section id="badges" class="docs-section">
+          <h2>Badges</h2>
+
+          <div class="example-box button-row">
+            <span class="yf-badge yf-d-inline-flex yf-align-center">
+              Default
+            </span>
+
+            <span
+              class="yf-badge yf-badge-primary yf-d-inline-flex yf-align-center"
+            >
+              Primary
+            </span>
+
+            <span
+              class="yf-badge yf-badge-success yf-d-inline-flex yf-align-center"
+            >
+              Success
+            </span>
+
+            <span
+              class="yf-badge yf-badge-warning yf-d-inline-flex yf-align-center"
+            >
+              Warning
+            </span>
+
+            <span
+              class="yf-badge yf-badge-danger yf-d-inline-flex yf-align-center"
+            >
+              Danger
+            </span>
+
+            <span
+              class="yf-badge yf-badge-info yf-d-inline-flex yf-align-center"
+            >
+              Info
+            </span>
+          </div>
+
+          <pre><code>&lt;span class="yf-badge yf-badge-primary yf-d-inline-flex yf-align-center"&gt;
+  Primary
+&lt;/span&gt;
+
+&lt;span class="yf-badge yf-badge-success yf-d-inline-flex yf-align-center"&gt;
+  Success
+&lt;/span&gt;</code></pre>
+        </section>
+
+        <!-- ===================================================
+           ALERTS
+           =================================================== -->
+
+        <section id="alerts" class="docs-section">
+          <h2>Alerts</h2>
+
+          <div class="example-box">
+            <div class="yf-alert yf-alert-primary">
+              <h3 class="yf-alert-title">Information</h3>
+              <p>Primary alert message.</p>
+            </div>
+
+            <div class="yf-alert yf-alert-success">
+              <h3 class="yf-alert-title">Success</h3>
+              <p>The action completed successfully.</p>
+            </div>
+
+            <div class="yf-alert yf-alert-warning">
+              <h3 class="yf-alert-title">Warning</h3>
+              <p>Please review this information.</p>
+            </div>
+
+            <div class="yf-alert yf-alert-danger">
+              <h3 class="yf-alert-title">Error</h3>
+              <p>Please correct the highlighted information.</p>
+            </div>
+
+            <div class="yf-alert yf-alert-info">
+              <h3 class="yf-alert-title">Info</h3>
+              <p>Additional information is available.</p>
+            </div>
+          </div>
+
+          <pre><code>&lt;div class="yf-alert yf-alert-success"&gt;
+
+  &lt;h3 class="yf-alert-title"&gt;
+    Success
+  &lt;/h3&gt;
+
+  &lt;p&gt;
+    The action completed successfully.
+  &lt;/p&gt;
+
+&lt;/div&gt;</code></pre>
+        </section>
+
+        <!-- ===================================================
+           CARDS
+           =================================================== -->
+
+        <section id="cards" class="docs-section">
+          <h2>Cards</h2>
+
+          <p>Cards provide a reusable surface for grouping content.</p>
+
+          <div class="example-box">
+            <div class="yf-card">
+              <div class="yf-card-header">
+                <h3 class="yf-card-title">Card Header</h3>
+              </div>
+
+              <div class="yf-card-body">
+                <h3 class="yf-card-title">Card Content</h3>
+
+                <p class="yf-card-text">
+                  This is the main content of the card.
+                </p>
+              </div>
+
+              <div class="yf-card-footer">
+                <button class="yf-btn yf-btn-sm">Action</button>
+              </div>
+            </div>
+          </div>
+
+          <pre><code>&lt;div class="yf-card"&gt;
+
+  &lt;div class="yf-card-header"&gt;
+    Card Header
+  &lt;/div&gt;
+
+  &lt;div class="yf-card-body"&gt;
+    Card content
+  &lt;/div&gt;
+
+  &lt;div class="yf-card-footer"&gt;
+    Card footer
+  &lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+        </section>
+
+        <!-- ===================================================
+           MODAL
+           =================================================== -->
+
+        <section id="modal" class="docs-section">
+          <h2>CSS-only Modal</h2>
+
+          <a href="#docs-modal" class="yf-btn yf-d-inline-flex yf-align-center">
+            Open Example Modal
+          </a>
+
+          <pre><code>&lt;a href="#my-modal"
+   class="yf-btn yf-d-inline-flex yf-align-center"&gt;
+  Open Modal
+&lt;/a&gt;
+
+&lt;div class="yf-modal yf-d-flex" id="my-modal"&gt;
+
+  &lt;a
+    class="yf-modal-backdrop"
+    href="#"
+    aria-label="Close"&gt;
+  &lt;/a&gt;
+
+  &lt;div class="yf-modal-dialog"
+       role="dialog"
+       aria-modal="true"&gt;
+
+    &lt;div class="yf-modal-header yf-d-flex"&gt;
+
+      &lt;h3 class="yf-modal-title"&gt;
+        Modal title
+      &lt;/h3&gt;
+
+      &lt;a
+        class="yf-modal-close yf-d-inline-flex"
+        href="#"
+        aria-label="Close"&gt;
+        &amp;times;
+      &lt;/a&gt;
+
+    &lt;/div&gt;
+
+    &lt;div class="yf-modal-body"&gt;
+      Modal content
+    &lt;/div&gt;
+
+    &lt;div class="yf-modal-footer yf-d-flex"&gt;
+      Footer content
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+
+          <div class="yf-modal yf-d-flex" id="docs-modal">
+            <!-- Add e.preventDefault prevention via JS or update backdrop -->
+            <a class="yf-modal-backdrop" href="#" aria-label="Close"></a>
+
+            <div class="yf-modal-dialog" role="dialog" aria-modal="true">
+              <div class="yf-modal-header yf-d-flex">
+                <h3 class="yf-modal-title">Documentation Modal</h3>
+              </div>
+
+              <div class="yf-modal-body">
+                <p>This modal is fully working.</p>
+              </div>
+
+              <div class="yf-modal-footer yf-d-flex">
+                <!-- Add yf-modal-close class here so JS handles it properly -->
+                <a
+                  class="yf-btn yf-btn-secondary yf-d-inline-flex yf-align-center yf-modal-close yf-text-base"
+                  href="#"
+                >
+                  Close
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================
+           ACCORDION
+           =================================================== -->
+
+        <section id="accordion" class="docs-section">
+          <h2>Accordion</h2>
+
+          <p>
+            The accordion uses JavaScript to toggle the
+            <span class="inline-code">active</span> class and control the
+            panel's maximum height.
+          </p>
+
+          <div class="example-box yf-accordion-group">
+            <button class="yf-accordion" type="button">
+              <span> What is YF CSS? </span>
+
+              <span class="yf-accordion-icon"></span>
+            </button>
+
+            <div class="yf-accordion-panel">
+              <p>
+                YF CSS is a lightweight responsive CSS framework using the yf-
+                prefix.
+              </p>
+            </div>
+
+            <button class="yf-accordion yf-mt-2" type="button">
+              <span> Does the accordion require JavaScript? </span>
+
+              <span class="yf-accordion-icon"></span>
+            </button>
+
+            <div class="yf-accordion-panel">
+              <p>Yes. JavaScript controls the active state and panel height.</p>
+            </div>
+          </div>
+
+          <pre><code>&lt;button class="yf-accordion" type="button"&gt;
+
+  &lt;span&gt;
+    Question
+  &lt;/span&gt;
+
+  &lt;span class="yf-accordion-icon"&gt;
+    +
+  &lt;/span&gt;
+
+&lt;/button&gt;
+
+&lt;div class="yf-accordion-panel"&gt;
+
+  &lt;p&gt;
+    Answer
+  &lt;/p&gt;
+
+&lt;/div&gt;</code></pre>
+
+          <h3>JavaScript</h3>
+
+          <pre><code>const acc =
+  document.getElementsByClassName("yf-accordion");
+
+for (let i = 0; i &lt; acc.length; i++) {
+
+  acc[i].addEventListener("click", function() {
+
+    this.classList.toggle("active");
+
+    const panel = this.nextElementSibling;
+
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight =
+        panel.scrollHeight + "px";
+    }
+
+  });
+
+}</code></pre>
+        </section>
+
+        <!-- ===================================================
+           SIDEBAR
+           =================================================== -->
+
+        <section id="sidebar" class="docs-section">
+          <h2>Sidebar</h2>
+
+          <p>
+            The sidebar is an off-canvas navigation component. JavaScript adds
+            the
+            <span class="inline-code">.is-open</span> class when it should be
+            visible.
+          </p>
+
+          <h3>Classes</h3>
+
+          <pre><code>.yf-sidebar
+.yf-sidebar-header
+.yf-sidebar-title
+.yf-sidebar-close
+.yf-sidebar-nav
+.yf-sidebar-link
+.yf-sidebar-divider
+.yf-sidebar-overlay
+.yf-sidebar-main
+
+.yf-sidebar-right
+.yf-sidebar-push
+
+.is-open
+.is-visible
+.is-active</code></pre>
+
+          <h3>Example</h3>
+
+          <div class="example-box">
+            <!-- Update your open button to use the framework's data-yf-target attribute -->
+            <button
+              class="yf-btn yf-d-inline-flex yf-align-center"
+              data-yf-target="#docs-sidebar"
+              type="button"
+            >
+              Open Sidebar
+            </button>
+
+            <div class="docs-sidebar-demo">
+              <aside class="yf-sidebar" id="docs-sidebar">
+                <div class="yf-sidebar-header yf-d-flex">
+                  <h2 class="yf-sidebar-title">YF CSS</h2>
+                  <!-- Must use yf-sidebar-close class -->
+                  <button
+                    class="yf-sidebar-close"
+                    type="button"
+                    aria-label="Close sidebar"
+                  >
+                    &times;
+                  </button>
+                </div>
+
+                <nav class="yf-sidebar-nav">
+                  <a href="#getting-started" class="yf-sidebar-link is-active">
+                    Getting Started
+                  </a>
+
+                  <a href="#accordion" class="yf-sidebar-link"> Accordion </a>
+
+                  <a href="#sidebar" class="yf-sidebar-link"> Sidebar </a>
+                </nav>
+              </aside>
+
+              <div class="yf-sidebar-overlay"></div>
+
+              <div class="yf-sidebar-main">
+                <h3>Main Content</h3>
+                <p>This area represents your page content.</p>
+              </div>
+            </div>
+          </div>
+
+          <pre><code>&lt;aside class="yf-sidebar"&gt;
+
+  &lt;div class="yf-sidebar-header yf-d-flex"&gt;
+
+    &lt;h2 class="yf-sidebar-title"&gt;
+      YF CSS
+    &lt;/h2&gt;
+
+    &lt;button class="yf-sidebar-close"&gt;
+      &amp;times;
+    &lt;/button&gt;
+
+  &lt;/div&gt;
+
+  &lt;nav class="yf-sidebar-nav"&gt;
+
+    &lt;a class="yf-sidebar-link" href="#"&gt;
+      Home
+    &lt;/a&gt;
+
+  &lt;/nav&gt;
+
+&lt;/aside&gt;
+
+&lt;div class="yf-sidebar-overlay"&gt;&lt;/div&gt;</code></pre>
+
+          <h3>Right Sidebar</h3>
+
+          <pre><code>&lt;aside class="yf-sidebar yf-sidebar-right"&gt;
+  ...
+&lt;/aside&gt;</code></pre>
+
+          <h3>Push Layout</h3>
+
+          <pre><code>&lt;aside class="yf-sidebar yf-sidebar-push"&gt;
+  ...
+&lt;/aside&gt;
+
+&lt;main class="yf-sidebar-main"&gt;
+  Content
+&lt;/main&gt;</code></pre>
+        </section>
+
+        <!-- ===================================================
+           TABS
+           =================================================== -->
+
+        <section id="tabs" class="docs-section">
+          <h2>Tabs</h2>
+
+          <p>
+            YF tabs can be implemented using radio-style inputs and CSS
+            selectors.
+          </p>
+
+          <div class="example-box">
+            <div class="yf-tabs">
+              <input type="radio" id="tab-overview" name="docs-tabs" checked />
+
+              <input type="radio" id="tab-features" name="docs-tabs" />
+
+              <input type="radio" id="tab-reviews" name="docs-tabs" />
+
+              <div class="yf-tabs-nav">
+                <label for="tab-overview"> Overview </label>
+
+                <label for="tab-features"> Features </label>
+
+                <label for="tab-reviews"> Reviews </label>
+              </div>
+
+              <div class="yf-tabs-content">
+                <div class="yf-tab-panel yf-tab-overview">
+                  Overview content.
+                </div>
+
+                <div class="yf-tab-panel yf-tab-features">
+                  Features content.
+                </div>
+
+                <div class="yf-tab-panel yf-tab-reviews">Reviews content.</div>
+              </div>
+            </div>
+          </div>
+
+          <pre><code>&lt;div class="yf-tabs"&gt;
+
+  &lt;input
+    type="radio"
+    id="tab-overview"
+    name="tabs"
+    checked&gt;
+
+  &lt;input
+    type="radio"
+    id="tab-features"
+    name="tabs"&gt;
+
+  &lt;div class="yf-tabs-nav"&gt;
+
+    &lt;label for="tab-overview"&gt;
+      Overview
+    &lt;/label&gt;
+
+    &lt;label for="tab-features"&gt;
+      Features
+    &lt;/label&gt;
+
+  &lt;/div&gt;
+
+  &lt;div class="yf-tabs-content"&gt;
+
+    &lt;div class="yf-tab-panel yf-tab-overview"&gt;
+      Overview
+    &lt;/div&gt;
+
+    &lt;div class="yf-tab-panel yf-tab-features"&gt;
+      Features
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+
+          <p>The current framework provides built-in selectors for the IDs:</p>
+
+          <pre><code>#tab-overview
+#tab-features
+#tab-reviews</code></pre>
+        </section>
+
+        <!-- ===================================================
+           TOOLTIPS
+           =================================================== -->
+
+        <section id="tooltips" class="docs-section">
+          <h2>Tooltips</h2>
+
+          <p>
+            Tooltips use the
+            <span class="inline-code">data-tooltip</span>
+            attribute and CSS pseudo-elements.
+          </p>
+
+          <div class="example-box">
+            <button
+              class="yf-btn yf-tooltip"
+              data-tooltip="This is a YF CSS tooltip"
+            >
+              Hover me
+            </button>
+          </div>
+
+          <pre><code>&lt;button
+  class="yf-btn yf-tooltip"
+  data-tooltip="Tooltip text"&gt;
+
+  Hover me
+
+&lt;/button&gt;</code></pre>
+
+          <p>Tooltips appear on hover and keyboard focus.</p>
+        </section>
+
+        <!-- ===================================================
+           TOASTS
+           =================================================== -->
+
+        <section id="toasts" class="docs-section">
+          <h2>Toasts</h2>
+          <p>
+            Toasts are notification surfaces that can be inserted into the toast
+            container.
+          </p>
+          <pre><code>&lt;div class="yf-toast-container"&gt;
+
+  &lt;div class="yf-toast yf-toast-success"&gt;
+
+    &lt;div&gt;
+
+      &lt;p class="yf-toast-title"&gt;
+        Success
+      &lt;/p&gt;
+
+      &lt;p class="yf-toast-message"&gt;
+        Your changes have been saved.
+      &lt;/p&gt;
+
+    &lt;/div&gt;
+
+    &lt;button class="yf-toast-close"&gt;
+      &amp;times;
+    &lt;/button&gt;
+
+  &lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+
+          <h3>Variants</h3>
+
+          <pre><code>.yf-toast-success
+.yf-toast-warning
+.yf-toast-danger
+.yf-toast-info</code></pre>
+        </section>
+
+        <!-- ===================================================
+           FORMS
+           =================================================== -->
+
+        <section id="forms" class="docs-section">
+          <h2>Forms</h2>
+
+          <p>YF CSS provides styles for common form controls.</p>
+
+          <div class="example-box">
+            <div class="yf-form-group">
+              <label class="yf-label yf-label-required" for="docs-name">
+                Name
+              </label>
+
+              <input
+                class="yf-input"
+                id="docs-name"
+                type="text"
+                placeholder="Your name"
+              />
+
+              <span class="yf-help"> Enter your full name. </span>
+            </div>
+
+            <div class="yf-form-group">
+              <label class="yf-label" for="docs-select"> Country </label>
+
+              <select class="yf-select" id="docs-select">
+                <option>Select a country</option>
+                <option>Jordan</option>
+                <option>United States</option>
+                <option>United Kingdom</option>
+              </select>
+            </div>
+
+            <div class="yf-form-group">
+              <label class="yf-label" for="docs-message"> Message </label>
+
+              <textarea
+                class="yf-textarea"
+                id="docs-message"
+                placeholder="Write your message"
+              ></textarea>
+            </div>
+          </div>
+
+          <pre><code>&lt;div class="yf-form-group"&gt;
+
+  &lt;label class="yf-label"&gt;
+    Name
+  &lt;/label&gt;
+
+  &lt;input
+    class="yf-input"
+    type="text"&gt;
+
+  &lt;span class="yf-help"&gt;
+    Help text
+  &lt;/span&gt;
+
+&lt;/div&gt;</code></pre>
+
+          <h3>Sizes</h3>
+
+          <pre><code>.yf-input-sm
+.yf-input
+.yf-input-lg
+
+.yf-select-sm
+.yf-select
+.yf-select-lg</code></pre>
+
+          <h3>Validation</h3>
+
+          <pre><code>&lt;input
+  class="yf-input is-valid"
+  type="text"&gt;
+
+&lt;span class="yf-valid-feedback"&gt;
+  Looks good.
+&lt;/span&gt;
+
+
+&lt;input
+  class="yf-input is-invalid"
+  type="text"&gt;
+
+&lt;span class="yf-invalid-feedback"&gt;
+  Please enter a valid value.
+&lt;/span&gt;</code></pre>
+        </section>
+
+        <!-- ===================================================
+           CHECKBOXES
+           =================================================== -->
+
+        <section id="checkboxes" class="docs-section">
+          <h2>Checkboxes</h2>
+
+          <div class="example-box">
+            <div class="yf-check">
+              <input class="yf-check-input" type="checkbox" id="check-one" />
+
+              <label class="yf-check-label" for="check-one">
+                Remember me
+              </label>
+            </div>
+
+            <div class="yf-check yf-check-lg">
+              <input class="yf-check-input" type="checkbox" id="check-two" />
+
+              <label class="yf-check-label" for="check-two">
+                Large checkbox
+              </label>
+            </div>
+          </div>
+
+          <pre><code>&lt;div class="yf-check"&gt;
+
+  &lt;input
+    class="yf-check-input"
+    type="checkbox"
+    id="check"&gt;
+
+  &lt;label
+    class="yf-check-label"
+    for="check"&gt;
+
+    Remember me
+
+  &lt;/label&gt;
+
+&lt;/div&gt;</code></pre>
+        </section>
+
+        <!-- ===================================================
+           SWITCHES
+           =================================================== -->
+
+        <section id="switches" class="docs-section">
+          <h2>Switches</h2>
+
+          <div class="example-box">
+            <label class="yf-switch">
+              <input class="yf-switch-input" type="checkbox" checked />
+
+              <span class="yf-switch-track"></span>
+
+              <span> Enable notifications </span>
+            </label>
+          </div>
+
+          <pre><code>&lt;label class="yf-switch"&gt;
+
+  &lt;input
+    class="yf-switch-input"
+    type="checkbox"&gt;
+
+  &lt;span class="yf-switch-track"&gt;&lt;/span&gt;
+
+  &lt;span&gt;
+    Enable notifications
+  &lt;/span&gt;
+
+&lt;/label&gt;</code></pre>
+        </section>
+
+        <!-- ===================================================
+           INPUT GROUPS
+           =================================================== -->
+
+        <section id="input-groups" class="docs-section">
+          <h2>Input Groups</h2>
+
+          <div class="example-box">
+            <div class="yf-input-group">
+              <span class="yf-input-group-text"> $ </span>
+
+              <input class="yf-input" type="text" placeholder="Amount" />
+            </div>
+          </div>
+
+          <pre><code>&lt;div class="yf-input-group"&gt;
+
+  &lt;span class="yf-input-group-text"&gt;
+    $
+  &lt;/span&gt;
+
+  &lt;input
+    class="yf-input"
+    type="text"&gt;
+
+&lt;/div&gt;</code></pre>
+        </section>
+
+        <!-- ===================================================
+           TABLES
+           =================================================== -->
+
+        <section id="tables" class="docs-section">
+          <h2>Tables</h2>
+
+          <div class="example-box">
+            <div class="yf-table-responsive">
+              <table class="yf-table yf-table-bordered yf-table-striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Role</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>John</td>
+                    <td>Active</td>
+                    <td>Admin</td>
+                  </tr>
+
+                  <tr>
+                    <td>Sarah</td>
+                    <td>Active</td>
+                    <td>Editor</td>
+                  </tr>
+
+                  <tr>
+                    <td>Mike</td>
+                    <td>Inactive</td>
+                    <td>User</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <pre><code>&lt;div class="yf-table-responsive"&gt;
+
+  &lt;table class="yf-table yf-table-bordered yf-table-striped"&gt;
+
+    &lt;thead&gt;
+      ...
+    &lt;/thead&gt;
+
+    &lt;tbody&gt;
+      ...
+    &lt;/tbody&gt;
+
+  &lt;/table&gt;
+
+&lt;/div&gt;</code></pre>
+
+          <h3>Table Variants</h3>
+
+          <pre><code>.yf-table
+.yf-table-bordered
+.yf-table-striped
+.yf-table-hover
+.yf-table-sm
+.yf-table-lg
+.yf-table-responsive</code></pre>
+        </section>
+
+        <!-- ===================================================
+           LISTS
+           =================================================== -->
+
+        <section id="lists" class="docs-section">
+          <h2>Lists</h2>
+
+          <h3>Unstyled List</h3>
+
+          <div class="example-box">
+            <ul class="yf-list-none">
+              <li class="yf-list-item">First item</li>
+
+              <li class="yf-list-item">Second item</li>
+
+              <li class="yf-list-item">Third item</li>
+            </ul>
+          </div>
+
+          <pre><code>&lt;ul class="yf-list-none"&gt;
+
+  &lt;li class="yf-list-item"&gt;
+    Item
+  &lt;/li&gt;
+
+&lt;/ul&gt;</code></pre>
+
+          <h3>List Styles</h3>
+
+          <pre><code>.yf-list-none
+.yf-list-disc
+.yf-list-decimal
+.yf-list-square</code></pre>
+        </section>
+
+        <!-- ===================================================
+           IMAGES
+           =================================================== -->
+
+        <section id="images" class="docs-section">
+          <h2>Images</h2>
+
+          <p>
+            YF CSS provides responsive image sizing, object-fit,
+            object-position, and aspect-ratio utilities.
+          </p>
+
+          <pre><code>.yf-img-fluid
+
+.yf-object-contain
+.yf-object-cover
+.yf-object-fill
+.yf-object-none
+.yf-object-scale-down
+
+.yf-object-center
+.yf-object-top
+.yf-object-right
+.yf-object-bottom
+.yf-object-left
+
+.yf-aspect-auto
+.yf-aspect-square
+.yf-aspect-video
+.yf-aspect-portrait</code></pre>
+
+          <h3>Responsive Image</h3>
+
+          <pre><code>&lt;img
+  class="yf-img-fluid"
+  src="image.jpg"
+  alt="Example"&gt;</code></pre>
+        </section>
+
+        <!-- ===================================================
+           SPACING
+           =================================================== -->
+
+        <section id="spacing" class="docs-section">
+          <h2>Spacing Utilities</h2>
+
+          <p>Spacing utilities use the following scale:</p>
+
+          <pre><code>0 = 0
+1 = .5rem
+2 = 1rem
+3 = 1.5rem
+4 = 2rem
+auto = auto</code></pre>
+
+          <h3>Margin</h3>
+
+          <pre><code>.yf-mt-0
+.yf-mt-1
+.yf-mt-2
+.yf-mt-3
+.yf-mt-4
+.yf-mt-auto
+
+.yf-mb-0
+.yf-mb-1
+.yf-mb-2
+.yf-mb-3
+.yf-mb-4
+.yf-mb-auto
+
+.yf-ms-0
+.yf-ms-1
+.yf-ms-2
+.yf-ms-3
+.yf-ms-4
+.yf-ms-auto
+
+.yf-me-0
+.yf-me-1
+.yf-me-2
+.yf-me-3
+.yf-me-4
+.yf-me-auto
+
+.yf-mx-0
+.yf-mx-1
+.yf-mx-2
+.yf-mx-3
+.yf-mx-4
+.yf-mx-auto
+
+.yf-my-0
+.yf-my-1
+.yf-my-2
+.yf-my-3
+.yf-my-4
+.yf-my-auto</code></pre>
+
+          <h3>Padding</h3>
+
+          <pre><code>.yf-pt-0 ... .yf-pt-4
+.yf-pb-0 ... .yf-pb-4
+.yf-pl-0 ... .yf-pl-4
+.yf-pr-0 ... .yf-pr-4
+.yf-px-0 ... .yf-px-4
+.yf-py-0 ... .yf-py-4</code></pre>
+        </section>
+
+        <!-- ===================================================
+           DISPLAY
+           =================================================== -->
+
+        <section id="display" class="docs-section">
+          <h2>Display</h2>
+
+          <pre><code>.yf-d-none
+.yf-d-block
+.yf-d-flex
+.yf-d-grid
+.yf-d-inline-block
+.yf-d-inline-flex
+
+.yf-hidden
+.yf-visible
+.yf-invisible</code></pre>
+
+          <p>
+            Responsive display utilities are available using
+            <span class="inline-code">sm</span>,
+            <span class="inline-code">md</span>,
+            <span class="inline-code">lg</span>, and
+            <span class="inline-code">xl</span>.
+          </p>
+
+          <pre><code>.yf-d-sm-none
+.yf-d-md-flex
+.yf-d-lg-grid
+.yf-d-xl-block</code></pre>
+        </section>
+
+        <!-- ===================================================
+           FLEX
+           =================================================== -->
+
+        <section id="flex" class="docs-section">
+          <h2>Flex Utilities</h2>
+
+          <h3>Direction</h3>
+
+          <pre><code>.yf-flex-row
+.yf-flex-column
+.yf-flex-row-reverse
+.yf-flex-column-reverse</code></pre>
+
+          <h3>Wrapping</h3>
+
+          <pre><code>.yf-flex-wrap
+.yf-flex-nowrap</code></pre>
+
+          <h3>Justification</h3>
+
+          <pre><code>.yf-justify-start
+.yf-justify-center
+.yf-justify-end
+.yf-justify-between
+.yf-justify-around
+.yf-justify-evenly</code></pre>
+
+          <h3>Alignment</h3>
+
+          <pre><code>.yf-align-start
+.yf-align-center
+.yf-align-end
+.yf-align-stretch</code></pre>
+
+          <h3>Self Alignment</h3>
+
+          <pre><code>.yf-self-auto
+.yf-self-start
+.yf-self-center
+.yf-self-end
+.yf-self-stretch</code></pre>
+
+          <h3>Flex Sizing</h3>
+
+          <pre><code>.yf-flex-1
+.yf-flex-auto
+.yf-flex-none
+
+.yf-grow
+.yf-grow-0
+
+.yf-shrink
+.yf-shrink-0</code></pre>
+        </section>
+
+        <!-- ===================================================
+           GRID UTILITIES
+           =================================================== -->
+
+        <section id="grid-utilities" class="docs-section">
+          <h2>Grid Utilities</h2>
+
+          <p>
+            In addition to the 12-column layout system, YF CSS provides CSS Grid
+            utilities.
+          </p>
+
+          <pre><code>.yf-grid-cols-1
+.yf-grid-cols-2
+.yf-grid-cols-3
+.yf-grid-cols-4
+
+.yf-grid-rows-1
+.yf-grid-rows-2
+.yf-grid-rows-3
+
+.yf-gap-0
+.yf-gap-1
+.yf-gap-2
+.yf-gap-3
+.yf-gap-4
+
+.yf-row-gap-0 ... .yf-row-gap-4
+.yf-column-gap-0 ... .yf-column-gap-4</code></pre>
+
+          <p>
+            Combine these with
+            <span class="inline-code">.yf-d-grid</span>.
+          </p>
+
+          <pre><code>&lt;div class="yf-d-grid yf-grid-cols-3 yf-gap-2"&gt;
+
+  &lt;div&gt;One&lt;/div&gt;
+  &lt;div&gt;Two&lt;/div&gt;
+  &lt;div&gt;Three&lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+        </section>
+
+        <!-- ===================================================
+           TYPOGRAPHY
+           =================================================== -->
+
+        <section id="typography" class="docs-section">
+          <h2>Typography</h2>
+
+          <h3>Text Alignment</h3>
+
+          <pre><code>.yf-text-left
+.yf-text-center
+.yf-text-right</code></pre>
+
+          <h3>Font Weight</h3>
+
+          <pre><code>.yf-font-thin
+.yf-font-extralight
+.yf-font-light
+.yf-font-normal
+.yf-font-medium
+.yf-font-semibold
+.yf-font-bold
+.yf-font-extrabold
+.yf-font-black</code></pre>
+
+          <h3>Font Size</h3>
+
+          <pre><code>.yf-text-xs
+.yf-text-sm
+.yf-text-base
+.yf-text-lg
+.yf-text-xl
+.yf-text-2xl
+.yf-text-3xl
+.yf-text-4xl
+.yf-text-5xl
+.yf-text-6xl
+.yf-text-7xl</code></pre>
+
+          <h3>Text Color</h3>
+
+          <pre><code>.yf-text-primary
+.yf-text-muted
+.yf-text-danger
+.yf-text-success</code></pre>
+
+          <h3>Line Height</h3>
+
+          <pre><code>.yf-leading-none
+.yf-leading-tight
+.yf-leading-snug
+.yf-leading-normal
+.yf-leading-relaxed
+.yf-leading-loose</code></pre>
+
+          <h3>Letter Spacing</h3>
+
+          <pre><code>.yf-tracking-tighter
+.yf-tracking-tight
+.yf-tracking-normal
+.yf-tracking-wide
+.yf-tracking-wider
+.yf-tracking-widest</code></pre>
+
+          <h3>Text Transformation</h3>
+
+          <pre><code>.yf-text-uppercase
+.yf-text-lowercase
+.yf-text-capitalize
+.yf-text-normal-case</code></pre>
+
+          <h3>Text Decoration</h3>
+
+          <pre><code>.yf-text-underline
+.yf-text-no-underline
+.yf-text-line-through</code></pre>
+
+          <h3>Text Wrapping</h3>
+
+          <pre><code>.yf-text-wrap
+.yf-text-nowrap
+.yf-text-balance
+.yf-text-pretty
+.yf-text-truncate
+
+.yf-break-normal
+.yf-break-words
+.yf-break-all</code></pre>
+        </section>
+
+        <!-- ===================================================
+           SIZING
+           =================================================== -->
+
+        <section id="sizing" class="docs-section">
+          <h2>Width and Height</h2>
+
+          <h3>Width</h3>
+
+          <pre><code>.yf-w-25
+.yf-w-50
+.yf-w-75
+.yf-w-100
+.yf-w-auto
+.yf-w-full</code></pre>
+
+          <h3>Height</h3>
+
+          <pre><code>.yf-h-25
+.yf-h-50
+.yf-h-75
+.yf-h-100
+.yf-h-auto
+.yf-h-full</code></pre>
+
+          <h3>Min / Max Width</h3>
+
+          <pre><code>.yf-min-w-0
+.yf-max-w-full</code></pre>
+
+          <p>Responsive sizing variants are available:</p>
+
+          <pre><code>.yf-w-sm-50
+.yf-w-md-50
+.yf-w-lg-50
+.yf-w-xl-50</code></pre>
+        </section>
+
+        <!-- ===================================================
+           POSITIONING
+           =================================================== -->
+
+        <section id="positioning" class="docs-section">
+          <h2>Positioning</h2>
+
+          <pre><code>.yf-position-static
+.yf-position-relative
+.yf-position-absolute
+.yf-position-fixed
+.yf-position-sticky</code></pre>
+
+          <h3>Offsets</h3>
+
+          <pre><code>.yf-top-0
+.yf-right-0
+.yf-bottom-0
+.yf-left-0
+.yf-inset-0</code></pre>
+
+          <p>Responsive position variants are also available.</p>
+        </section>
+
+        <!-- ===================================================
+           OVERFLOW
+           =================================================== -->
+
+        <section id="overflow" class="docs-section">
+          <h2>Overflow</h2>
+
+          <pre><code>.yf-overflow-visible
+.yf-overflow-hidden
+.yf-overflow-auto
+.yf-overflow-scroll
+
+.yf-overflow-x-visible
+.yf-overflow-x-hidden
+.yf-overflow-x-auto
+.yf-overflow-x-scroll
+
+.yf-overflow-y-visible
+.yf-overflow-y-hidden
+.yf-overflow-y-auto
+.yf-overflow-y-scroll</code></pre>
+
+          <h3>Responsive Overflow</h3>
+
+          <pre><code>.yf-overflow-md-hidden
+.yf-overflow-lg-auto
+.yf-overflow-x-xl-auto
+.yf-overflow-y-sm-hidden</code></pre>
+        </section>
+
+        <!-- ===================================================
+           BORDERS
+           =================================================== -->
+
+        <section id="borders" class="docs-section">
+          <h2>Borders</h2>
+
+          <pre><code>.yf-border
+.yf-border-0
+
+.yf-border-top
+.yf-border-right
+.yf-border-bottom
+.yf-border-left</code></pre>
+
+          <h3>Border Colors</h3>
+
+          <pre><code>.yf-border-primary
+.yf-border-secondary
+.yf-border-success
+.yf-border-warning
+.yf-border-danger
+.yf-border-info
+.yf-border-white
+.yf-border-black
+.yf-border-transparent</code></pre>
+        </section>
+
+        <!-- ===================================================
+           RADIUS
+           =================================================== -->
+
+        <section id="radius" class="docs-section">
+          <h2>Border Radius</h2>
+
+          <pre><code>.yf-rounded-0
+.yf-rounded-sm
+.yf-rounded
+.yf-rounded-lg
+.yf-rounded-full
+
+.yf-rounded-top
+.yf-rounded-bottom
+.yf-rounded-left
+.yf-rounded-right</code></pre>
+        </section>
+
+        <!-- ===================================================
+           SHADOWS
+           =================================================== -->
+
+        <section id="shadows" class="docs-section">
+          <h2>Shadows</h2>
+
+          <div class="example-box">
+            <div class="yf-card yf-shadow-sm yf-mb-2">Small shadow</div>
+
+            <div class="yf-card yf-shadow yf-mb-2">Normal shadow</div>
+
+            <div class="yf-card yf-shadow-lg">Large shadow</div>
+          </div>
+
+          <pre><code>.yf-shadow-none
+.yf-shadow-sm
+.yf-shadow
+.yf-shadow-lg</code></pre>
+        </section>
+
+        <!-- ===================================================
+           BACKGROUNDS
+           =================================================== -->
+
+        <section id="backgrounds" class="docs-section">
+          <h2>Backgrounds</h2>
+
+          <pre><code>.yf-bg-transparent
+.yf-bg-primary
+.yf-bg-secondary
+.yf-bg-success
+.yf-bg-warning
+.yf-bg-danger
+.yf-bg-info
+.yf-bg
+.yf-bg-main
+.yf-bg-surface
+.yf-bg-white
+.yf-bg-black</code></pre>
+        </section>
+
+        <!-- ===================================================
+           VISIBILITY
+           =================================================== -->
+
+        <section id="visibility" class="docs-section">
+          <h2>Visibility</h2>
+
+          <pre><code>.yf-visible
+.yf-invisible
+.yf-hidden</code></pre>
+
+          <p>
+            Responsive variants are available using
+            <span class="inline-code">sm</span>,
+            <span class="inline-code">md</span>,
+            <span class="inline-code">lg</span>, and
+            <span class="inline-code">xl</span>.
+          </p>
+
+          <pre><code>.yf-visible-md
+.yf-invisible-lg</code></pre>
+        </section>
+
+        <!-- ===================================================
+           OPACITY
+           =================================================== -->
+
+        <section id="opacity" class="docs-section">
+          <h2>Opacity</h2>
+
+          <pre><code>.yf-opacity-0
+.yf-opacity-25
+.yf-opacity-50
+.yf-opacity-75
+.yf-opacity-100</code></pre>
+
+          <p>Responsive opacity utilities are also provided.</p>
+
+          <pre><code>.yf-opacity-sm-50
+.yf-opacity-md-75
+.yf-opacity-lg-100</code></pre>
+        </section>
+
+        <!-- ===================================================
+           Z INDEX
+           =================================================== -->
+
+        <section id="z-index" class="docs-section">
+          <h2>Z-Index</h2>
+
+          <pre><code>.yf-z-0
+.yf-z-1
+.yf-z-10
+.yf-z-50
+.yf-z-100
+
+.yf-z-n-1
+.yf-z-n-10
+.yf-z-n-50
+.yf-z-n-100</code></pre>
+        </section>
+
+        <!-- ===================================================
+           RESPONSIVE
+           =================================================== -->
+
+        <section id="responsive" class="docs-section">
+          <h2>Responsive Utilities</h2>
+
+          <p>
+            YF CSS uses mobile-first responsive breakpoints. Base classes apply
+            to all screen sizes, while breakpoint classes override them at the
+            specified width.
+          </p>
+
+          <div class="example-box">
+            <div class="yf-d-block yf-d-md-flex yf-d-lg-grid">
+              Responsive element
+            </div>
+          </div>
+
+          <pre><code>.yf-d-block
+.yf-d-md-flex
+.yf-d-lg-grid</code></pre>
+
+          <h3>Breakpoints</h3>
+
+          <pre><code>sm = 576px
+md = 768px
+lg = 992px
+xl = 1200px</code></pre>
+
+          <h3>Responsive Naming</h3>
+
+          <p>Responsive utilities generally follow this pattern:</p>
+
+          <pre><code>.yf-{utility}-{breakpoint}-{value}</code></pre>
+
+          <p>For example:</p>
+
+          <pre><code>.yf-text-md-center
+.yf-flex-lg-row
+.yf-gap-xl-4
+.yf-w-md-50
+.yf-overflow-lg-auto</code></pre>
+        </section>
+<!-- ===================================================
+           YF JAVASCRIPT FRAMEWORK
+           =================================================== -->
+
+        <section id="yf-core" class="docs-section">
+          <h2>YF JavaScript Framework</h2>
+
+          <p>
+            YF includes a lightweight, chainable core selector engine (<span
+              class="inline-code"
+              >yf</span
+            >) inspired by jQuery, paired with fully object-oriented component
+            classes. It bridges the gap between clean functional DOM manipulation
+            and robust class-based architecture.
+          </p>
+
+          <h3>Core Capabilities</h3>
+          <p>
+            The <span class="inline-code">yf()</span> selector automatically normalizes CSS selectors, element nodes, NodeLists, and arrays into a unified collection. It allows you to:
+          </p>
+          <ul class="yf-list-disc yf-ms-4 yf-mb-3">
+            <li class="yf-list-item"><strong>Manage Classes:</strong> Instantly add, remove, toggle, or check CSS classes (<span class="inline-code">.addClass()</span>, <span class="inline-code">.removeClass()</span>, <span class="inline-code">.toggleClass()</span>).</li>
+            <li class="yf-list-item"><strong>Control Visibility:</strong> Show, hide, or toggle element display states dynamically (<span class="inline-code">.show()</span>, <span class="inline-code">.hide()</span>, <span class="inline-code">.toggle()</span>).</li>
+            <li class="yf-list-item"><strong>Read & Write Content:</strong> Get or set inner HTML, text content, and form input values (<span class="inline-code">.html()</span>, <span class="inline-code">.text()</span>, <span class="inline-code">.val()</span>).</li>
+            <li class="yf-list-item"><strong>Manage Attributes:</strong> Read, set, or remove any custom or native HTML attributes (<span class="inline-code">.attr()</span>, <span class="inline-code">.removeAttr()</span>).</li>
+            <li class="yf-list-item"><strong>Event Handling:</strong> Attach and remove cross-element event listeners cleanly (<span class="inline-code">.on()</span>, <span class="inline-code">.off()</span>).</li>
+          </ul>
+
+          <h3>Quick Usage</h3>
+
+          <pre><code>yf(".element").hide();
+yf("#button").on("click", () => {
+  console.log("Clicked!");
+});
+yf(".box").addClass("active");
+yf("input#email").val("user@example.com");</code></pre>
+
+          <h3>DOM Ready Helper</h3>
+
+          <pre><code>yf_ready(() => {
+  console.log("DOM is fully loaded and ready");
+});</code></pre>
+        </section>
+
+        <!-- ===================================================
+           YF TOAST (JS COMPONENT)
+           =================================================== -->
+
+        <section id="yf-toast-js" class="docs-section">
+          <h2>YF Toast Component</h2>
+
+          <p>
+            The toast notification manager creates, injects, and displays alerts
+            programmatically via static method calls or declaratively through HTML attributes.
+          </p>
+
+          <p>
+            Under the hood, `YFToast` dynamically creates a container wrapper (`.yf-toast-container`) on the fly if one doesn't exist, appends it to the `<body>`, renders inner HTML templates, handles auto-dismiss timers, and triggers exit animations (`.is-removing`) before purging elements from the DOM.
+          </p>
+
+          <div class="toast-box toast-row">
+            <button
+              class="yf-btn yf-btn-success toast-btn"
+              type="button"
+              data-yf-toast='{"type": "success", "title": "Success!", "message": "Your profile changes have been saved successfully.", "duration": 3000}'
+            >
+              Show Success Toast
+            </button>
+
+            <button
+              class="yf-btn yf-btn-warning toast-btn"
+              type="button"
+              data-yf-toast='{"type": "warning", "title": "Warning!", "message": "Your session is about to expire in 5 minutes.", "duration": 4000}'
+            >
+              Show Warning Toast
+            </button>
+
+            <button
+              class="yf-btn yf-btn-danger toast-btn"
+              type="button"
+              data-yf-toast='{"type": "danger", "title": "Error!", "message": "Failed to connect to the database. Please try again.", "duration": 5000}'
+            >
+              Show Danger Toast
+            </button>
+
+            <button
+              class="yf-btn yf-btn-info toast-btn"
+              type="button"
+              data-yf-toast='{"type": "info", "title": "Did you know?", "message": "You can customize your dashboard layout in settings.", "duration": 4000}'
+            >
+              Show Info Toast
+            </button>
+          </div>
+
+          <pre><code>YFToast.show({
+  title: "Success!",
+  message: "Your changes have been saved.",
+  type: "success", // success, warning, danger, info
+  duration: 4000
+});</code></pre>
+        </section>
+
+        <!-- ===================================================
+           YF SIDEBAR (JS COMPONENT)
+           =================================================== -->
+
+        <section id="yf-sidebar-js" class="docs-section">
+          <h2>YFSidebar Class</h2>
+
+          <p>
+            Sidebars are managed through the
+            <span class="inline-code">YFSidebar</span> class. It handles off-canvas slide-in mechanics by toggling the <span class="inline-code">.is-open</span> class on sidebars and the <span class="inline-code">.is-visible</span> class on background overlays.
+          </p>
+
+          <p>
+            It uses a internal <span class="inline-code">WeakMap</span> cache to prevent duplicate event listener bindings and automatically maps elements with <span class="inline-code">data-yf-target</span> attributes to open or close smoothly.
+          </p>
+
+          <pre><code>// Manual instantiation or configuration override
+new YFSidebar("#mainSidebar", {
+  closeOnOverlayClick: true
+});</code></pre>
+        </section>
+
+        <!-- ===================================================
+           YF MODAL (JS COMPONENT)
+           =================================================== -->
+
+        <section id="yf-modal-js" class="docs-section">
+          <h2>YFModal Class</h2>
+
+          <p>
+            The modal component manages dynamic visibility (toggling <span class="inline-code">opacity</span>, <span class="inline-code">visibility</span>, and <span class="inline-code">pointer-events</span>), background scroll-locking (<span class="inline-code">document.body.style.overflow = "hidden"</span>), backdrop click closures, and global <span class="inline-code">ESC</span> key exit events.
+          </p>
+
+          <pre><code>// Manual instantiation
+new YFModal("#demoModal", {
+  closeOnBackdrop: true,
+  closeOnEsc: true
+});</code></pre>
+        </section>
+
+        <!-- ===================================================
+           YF ACCORDION (JS COMPONENT)
+           =================================================== -->
+
+        <section id="yf-accordion-js" class="docs-section">
+          <h2>YFAccordion Class</h2>
+
+          <p>
+            Accordions require a parent wrapper with
+            <span class="inline-code">.yf-accordion-group</span>. Instead of hardcoded heights, the accordion dynamically computes the exact pixel height of hidden content using <span class="inline-code">panel.scrollHeight</span>, animating the <span class="inline-code">maxHieght</span> property for fluid collapsible panels while toggling the <span class="inline-code">.active</span> class.
+          </p>
+
+          <pre><code>// Initialize with custom options
+new YFAccordion("#faqAccordion", {
+  showFirst: false
+});</code></pre>
+        </section>
+      </main>
+    </div>
+    <!-- =======================================================
+       YF JAVASCRIPT
+       ======================================================= -->
+    <script src="js/script.js"></script>
+    <script src="js/yf.js"></script>
+  </body>
+</html>

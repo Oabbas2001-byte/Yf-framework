@@ -1,0 +1,326 @@
+/* =========================================================
+   Documentation Layout (Desktop >= 801px)
+   ========================================================= */
+
+.docs-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  min-height: 100vh;
+  max-width: 1400px;
+}
+
+.docs-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 1.5rem;
+  overflow-y: auto;
+  border-inline-end: 1px solid var(--yf-border);
+  background: var(--yf-bg);
+  transition: transform 0.3s ease;
+  z-index: 100;
+}
+
+.docs-sidebar h2 {
+  margin-block-start: 0;
+  margin-block-end: 1.5rem;
+}
+
+.docs-sidebar h3 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--yf-muted);
+}
+
+.docs-sidebar a {
+  display: block;
+  padding: 0.45rem 0;
+  color: var(--yf-text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.docs-sidebar a:hover {
+  color: var(--yf-primary);
+}
+
+.docs-main {
+  width: min(100%, 1200px);
+  padding: 2rem;
+}
+
+.docs-section {
+  margin-block-end: 3rem;
+  scroll-margin-top: 1.5rem;
+}
+
+.docs-section > h2 {
+  padding-block-end: 0.5rem;
+  border-bottom: 1px solid var(--yf-border);
+}
+
+.docs-section h3 {
+  margin-block-start: 2rem;
+}
+
+/* =========================================================
+   Code Blocks
+   ========================================================= */
+
+pre {
+  overflow-x: auto;
+  padding: 1rem;
+  border: 1px solid var(--yf-border);
+  border-radius: var(--yf-radius);
+  background: #0f172a;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+code {
+  font-family: Consolas, Monaco, "Courier New", monospace;
+}
+
+.inline-code {
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.25rem;
+  background: var(--yf-bg);
+  border: 1px solid var(--yf-border);
+}
+
+/* =========================================================
+   Component Examples & Demos
+   ========================================================= */
+
+.example-box {
+  padding: 1.25rem;
+  border: 1px solid var(--yf-border);
+  border-radius: var(--yf-radius);
+  background: var(--yf-bg);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grid-preview {
+  padding: 0.75rem;
+  border: 1px solid var(--yf-border);
+  border-radius: var(--yf-radius-sm);
+  background: var(--yf-surface);
+  text-align: center;
+}
+
+.button-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 0.75rem;
+  justify-content: center; /* Centers items if they wrap */
+  align-items: center;
+}
+
+.button-row .yf-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.demo-stack > * + * {
+  margin-top: 1rem;
+}
+
+.color-preview {
+  min-height: 80px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--yf-radius);
+  color: var(--yf-white);
+  font-weight: 700;
+}
+
+/* =========================================================
+       Sidebar Demo
+       ========================================================= */
+
+.docs-sidebar-demo {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  border: 1px solid var(--yf-border);
+  border-radius: var(--yf-radius);
+  background: var(--yf-surface);
+}
+
+.docs-sidebar-demo .yf-sidebar {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  width: 260px;
+  height: 100%;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] .docs-sidebar-demo .yf-sidebar {
+  transform: translateX(100%);
+}
+
+.docs-sidebar-demo .yf-sidebar.is-open {
+  transform: translateX(0);
+}
+
+.docs-sidebar-demo .yf-sidebar-main {
+  min-height: 100%;
+  padding: 1.5rem;
+}
+
+.docs-sidebar-demo .yf-sidebar-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+/* =========================================================
+       Toast Demo
+       ========================================================= */
+
+.docs-toast-demo {
+  position: relative;
+  min-height: 220px;
+  padding: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--yf-border);
+  border-radius: var(--yf-radius);
+  background: var(--yf-surface);
+}
+
+.docs-toast-demo .yf-toast-container {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.toast-box {
+  padding: 1.25rem;
+  border: 1px solid var(--yf-border);
+  border-radius: var(--yf-radius);
+  background: var(--yf-bg);
+}
+
+.toast-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+.toast-btn {
+  width: 90%;
+}
+
+/* =========================================================
+       Responsive Documentation Layout
+       ========================================================= */
+
+/* =========================================================
+   Responsive Drawer (<= 800px)
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .docs-layout {
+    display: block;
+  }
+
+  .docs-main {
+    width: 100%;
+    padding: 1.25rem;
+  }
+
+  .burgerbg {
+    background-color: var(--yf-bg);
+    border-bottom: 1px solid gray;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+  }
+
+  /* Hamburger Button */
+  .yf-burger-btn {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 2rem;
+      height: 1.35rem;
+      padding: 0;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      position: fixed;
+      margin: 10px 21px;
+      z-index: 1001;
+      top: 2px;
+  }
+
+  .yf-burger-dash {
+    width: 100%;
+    height: 2px;
+    background-color: var(--yf-text, #0f172a);
+    border-radius: 2px;
+    transition:
+      transform 0.25s ease,
+      opacity 0.25s ease;
+  }
+
+  /* Animated 'X' when active */
+  .yf-burger-btn.is-active .yf-burger-dash:nth-child(1) {
+    transform: translateY(9.5px) rotate(45deg);
+  }
+  .yf-burger-btn.is-active .yf-burger-dash:nth-child(2) {
+    opacity: 0;
+  }
+  .yf-burger-btn.is-active .yf-burger-dash:nth-child(3) {
+    transform: translateY(-9.5px) rotate(-45deg);
+  }
+
+  /* Backdrop Overlay */
+  .docs-sidebar-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+    z-index: 998;
+  }
+
+  .docs-sidebar-backdrop.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Mobile Sidebar Off-Canvas */
+  .docs-sidebar {
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    width: 280px;
+    max-width: 80vw;
+    height: 100vh;
+    z-index: 999;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%);
+  }
+
+  [dir="rtl"] .docs-sidebar {
+    transform: translateX(100%);
+  }
+
+  .docs-sidebar.is-open {
+    transform: translateX(0);
+  }
+}

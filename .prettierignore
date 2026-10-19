@@ -1,0 +1,3 @@
+# Ignore minified production files
+*.min.css
+*.min.js
