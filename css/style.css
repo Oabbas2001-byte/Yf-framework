@@ -49,6 +49,7 @@
 .docs-main {
   width: min(100%, 1200px);
   padding: 2rem;
+  margin-inline-start: 20px;
 }
 
 .docs-section {
@@ -288,6 +289,13 @@ code {
     transform: translateY(-9.5px) rotate(-45deg);
   }
 
+  .yf-btn {
+    min-height: 20px;
+    font-size: 14px;
+    text-wrap: nowrap;
+    padding: 10px;
+  }
+
   /* Backdrop Overlay */
   .docs-sidebar-backdrop {
     display: block;
@@ -326,5 +334,20 @@ code {
 
   .docs-sidebar.is-open {
     transform: translateX(0);
+  }
+}
+
+@media (max-width: 650px){
+
+  .toast-row {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .yf-btn {
+    font-size: 12px;
+    text-wrap: nowrap;
+    width: 215px;
   }
 }
